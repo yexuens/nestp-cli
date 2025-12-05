@@ -1,6 +1,6 @@
 {
   "name": "nestp",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "scripts": {
     "dev": "rspack build --watch",
     "build": "rspack build",
