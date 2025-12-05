@@ -1,10 +1,10 @@
 {
   "name": "nestp",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "scripts": {
     "dev": "rspack build --watch",
     "build": "rspack build",
-    "release": "bumpp && npm publish"
+    "release": "bun run build && bumpp && npm publish"
   },
   "files": [
     "dist"
