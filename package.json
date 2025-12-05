@@ -1,0 +1,35 @@
+{
+  "name": "nestp",
+  "version": "0.0.3",
+  "scripts": {
+    "dev": "rspack build --watch",
+    "build": "rspack build",
+    "release": "bumpp && npm publish"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@rspack/cli": "^1.6.6",
+    "@rspack/core": "^1.6.6",
+    "@types/bun": "latest",
+    "@types/ejs": "^3.1.5",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^24.10.1",
+    "bumpp": "^10.3.2",
+    "ts-node": "^10.9.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "commander": "^14.0.2",
+    "dayjs": "^1.11.19",
+    "ejs": "^3.1.10",
+    "fs-extra": "^11.3.2"
+  },
+  "bin": {
+    "nestp": "./dist/index.js"
+  }
+}

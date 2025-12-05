@@ -1,0 +1,25 @@
+﻿import { pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core';
+import { createInsertSchema, createSelectSchema } from 'drizzle-zod';
+import { z } from 'zod';
+import { createZodDto } from 'nestjs-zod';
+
+export const <%= name %> = pgTable('<%= name %>', {
+id: serial('id').primaryKey(),
+createdAt: timestamp('created_at').defaultNow(),
+updatedAt: timestamp('updated_at').defaultNow(),
+});
+
+export const insert<%= first_upper_name %>Schema = createInsertSchema(<%= name %>).omit({
+id: true,
+createdAt: true,
+updatedAt: true,
+});
+
+export const select<%= first_upper_name %>Schema = createSelectSchema(<%= name %>, {
+createdAt: z.string(),
+updatedAt: z.string(),
+});
+
+export class <%= first_upper_name %>Dto extends createZodDto(select<%= first_upper_name %>Schema) {}
+
+export class <%= first_upper_name %>CreateDto extends createZodDto(insert<%= first_upper_name %>Schema) {}
